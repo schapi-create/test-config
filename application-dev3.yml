@@ -1,0 +1,8 @@
+eureka:
+  environment: dev3
+  client:
+    serviceUrl:
+      defaultZone: ${DISCOVERY_URI}
+
+exchange:
+  hostname: exst-ui${HOST_NAME_COLOR}-dev3.schneider-electric.com

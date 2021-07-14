@@ -1,0 +1,23 @@
+eureka:
+  environment: sit
+  client:
+    serviceUrl:
+      defaultZone: ${DISCOVERY_URI}
+
+exchange:
+  hostname: exst-ui${HOST_NAME_COLOR}-sit.schneider-electric.com
+
+redirect:
+  whitelist:
+    ${exchange.hostname},
+    exst-ui-sit.schneider-electric.com,
+    testschneider.appdirect.com,
+    qa-buildings.schneider-electric.com,
+    uat-data.exchange.se.com,
+    schneider.qmerit.com,
+    uat-community.exchange.se.com,
+    ecoxpert-qa.dev.se.com,
+    sitbfo19-secommunities.cs17.force.com,
+    partner.schneider-electric.com,
+    godigital-sqe2.dev.schneider-electric.com,
+    se--sitbfo19.my.salesforce.com

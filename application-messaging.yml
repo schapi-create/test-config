@@ -1,0 +1,10 @@
+messaging:
+  idp-service-queue:
+    name: exst-${ENV_TYPE}-${ZDT_COLOR}-idp-service-q
+
+---
+spring:
+  profiles: local
+messaging:
+  idp-service-queue:
+    name: exst-local-idp-service-q

@@ -1,0 +1,23 @@
+eureka:
+  environment: uat
+  client:
+    serviceUrl:
+      defaultZone: ${DISCOVERY_URI}
+
+exchange:
+  hostname: exst-ui${HOST_NAME_COLOR}-uat.schneider-electric.com
+
+redirect:
+  whitelist:
+    ${exchange.hostname},
+    exst-ui-uat.schneider-electric.com,
+    testschneider2.appdirect.com,
+    uat-community.exchange.se.com,
+    ecoxpert-qa.dev.se.com,
+    uat-data.exchange.se.com,
+    schneider.qmerit.com,
+    secureidentity-uat.schneider-electric.com,
+    partner.schneider-electric.com,
+    godigital-uat.dev.schneider-electric.com,
+    se--uatbfo21.my.salesforce.com,
+    uatbfo21-secommunities.cs190.force.com

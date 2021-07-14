@@ -1,0 +1,21 @@
+godigital:
+  url:
+    base: https://godigital-sqe2.dev.schneider-electric.com
+---
+spring:
+  profiles: uat, uat2
+godigital:
+  url:
+    base: https://godigital-uat.dev.schneider-electric.com
+---
+spring:
+  profiles: ppr
+godigital:
+  url:
+    base: https://godigital-pprod2.dev.schneider-electric.com
+---
+spring:
+  profiles: prod
+godigital:
+  url:
+    base: https://godigital.schneider-electric.com
