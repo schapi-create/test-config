@@ -1,0 +1,371 @@
+server:
+  port: 8088
+
+zuul:
+  sensitiveHeaders:
+  ignoredHeaders:
+  ratelimit:
+    key-prefix: ${spring.cloud.client.ip-address}:rate_limit
+    enabled: true
+    repository: JPA
+    behind-proxy: true
+    policy-list:
+      logs-accumulator-service:
+        - limit: 3000
+          refresh-interval: 15
+
+api:
+  white-list:
+    common:
+      GET:
+        - /actuator/**
+        - /webjars/**
+        - /v2/**
+        - /swagger-ui.html
+        - /swagger-resources/**
+      POST:
+        - /actuator/**
+    personalization-service:
+      GET:
+        - /pages
+        - /dictionary
+        - /sitemap
+        - /robots
+      POST:
+        - /invitation/*
+    community-service:
+      GET:
+        - /community/feeds
+        - /community/forums
+        - /community/tags
+    api-management-service:
+      GET:
+        - /analytics/usage
+        - /analytics/errors
+        - /analytics/average-response-time
+        - /api/v1/integration/processEvent
+        - /api/v1/integration/processEventAsync
+        - /unsecured/processEvent
+        - /users/me/api-products
+    crm-service:
+      GET:
+        - /dictionary/business-domains
+        - /dictionary/service-types
+        - /dictionary/consumption-api-models
+        - /dictionary/periods
+        - /dictionary/trial-periods
+        - /dictionary/grace-periods
+        - /dictionary/measures
+      POST:
+        - /support
+        - /service-vendor-request
+        - /publish-service-request
+        - /publish-api-request
+        - /bank-details
+        - /company-details
+        - /publish-dataset-request
+    datasets-service:
+      GET:
+        - /integration/appdirect/process-event
+    idp-service:
+      GET:
+        - /dictionary/countries
+        - /dictionary/languages
+        - /dictionary/company
+      POST:
+        - /oauth/token
+    auth-service:
+      GET:
+        - /v1/auth/oauth/authorisation
+        - /profile
+        - /logout
+        - /users/meta-data
+        - /dictionary/service-vendor-business-types
+        - /dictionary/service-vendor-segments
+        - /dictionary/service-vendor-certification
+        - /user-agreements
+      POST:
+        - /survey
+        - /termsAndConditions/accept
+      PUT:
+        - /profile
+    report-service:
+      GET:
+        - /leads
+        - /app-usages
+        - /subscriptions
+        - /transactions
+        - /master-data
+        - /api-consumption-report-page
+      POST:
+        - /leads
+        - /providers-leads
+        - /technology-partnership
+        - /app-usages
+        - /subscriptions
+        - /transactions
+        - /transactions/extended
+        - /master-data
+        - /api-consumption-report-page
+        - /generate-leads
+        - /user-agreements
+        - /api-consumption-report
+    marketplace-service:
+      GET:
+        - /actuator/appdirect-health
+        - /update
+        - /products/popular
+        - /products/vendor
+        - /product/*
+        - /products
+        - /shop/sitemap
+        - /products/*/editions-pricing
+        - /products/*/editions
+        - /dictionary/currencies
+        - /library
+        - /apps
+      POST:
+        - /role
+        - /usage
+        - /products/*/lead
+        - /products/*/lead/auto
+        - /products/*/related
+    navigation-service:
+      GET:
+        - /**
+    demo-app-service:
+      GET:
+        - /**
+      POST:
+        - /**
+      PUT:
+        - /**
+      DELETE:
+        - /**
+    godigital-service:
+      GET:
+        - /info/companies
+        - /info/offers
+        - /info/offers/*
+        - /invoices/*
+        - /invoices/*/download
+        - /products
+        - /products/*
+        - /products/*/verify
+        - /products/parent/*
+        - /products/prices
+        - /carts
+        - /carts/*
+        - /carts/sharing/*
+        - /carts/*/items/*
+        - /subscription/*
+        - /subscription/*/amend
+        - /subscription/*/renew
+        - /subscription/preview/*
+        - /subscription/*/date-to-cancel
+        - /subscription/*/date-to-suspend
+        - /users
+        - /users/*
+        - /companies
+        - /companies/*
+        - /dictionary/**
+        - /billing-accounts
+        - /billing-accounts/**
+        - /offers
+        - /offers/*
+        - /currency-mapping
+        - /currency-mapping/*
+        - /payment-methods/credit-cards/**
+        - /promos/**
+        - /offer-mappings
+        - /offer-mappings/*
+        - /import/*/status
+      POST:
+        - /invoices/search
+        - /products/search
+        - /products/prices
+        - /carts
+        - /carts/sharing
+        - /carts/sharing/*/convert
+        - /carts/*/items
+        - /carts/*
+        - /subscription/*/suspend
+        - /subscription/*/reactivate
+        - /subscription/checkout
+        - /subscription/checkout/*
+        - /subscription/search
+        - /subscription/renew
+        - /currency-mapping
+        - /import/zuora-products
+        - /users
+        - /companies
+        - /billing-accounts
+        - /offers
+        - /offer-mappings
+      PUT:
+        - /info/companies/*
+        - /carts/*
+        - /carts/*/items
+        - /carts/*/items/*
+        - /subscription/*/cancel
+        - /subscription/*/resend
+        - /subscription/checkout
+        - /subscription/checkout/*
+        - /subscription/*/activation-date
+        - /billing-accounts
+        - /offer-mappings
+      PATCH:
+        - /carts/*/items/*
+      DELETE:
+        - /carts/*
+        - /carts/*/items/*
+        - /users/**
+        - /companies/*
+        - /offers/*
+        - /currency-mapping/*
+        - /carts/product-lines/*
+        - /offer-mappings/*
+        - /offer-mappings/*/offer/*
+    integration-hub-service:
+      GET:
+        - /events
+      POST:
+        - /events
+      PUT:
+        - /events/*/acknowledgement
+        - /events/acknowledgement
+    entitlement-portal-service:
+      GET:
+        - /subscriptions/*
+        - /accounts/*/subscriptions
+    providers-service:
+      GET:
+        - /providers
+        - /providers/**
+        - /admin/**
+        - /company-profile
+        - /partnership-profile
+        - /dictionary/segments
+        - /dictionary/market-segments
+        - /dictionary/solution-for
+        - /dictionary/service-types
+        - /dictionary/primary-domains
+        - /dictionary/countries/**
+        - /dictionary/asi-certificates
+        - /dictionary/partner-certificates
+        - /dictionary/expert-certificates
+        - /dictionary/itc-certificates
+        - /dictionary/technology-focuses
+        - /dictionary/business-solutions
+        - /dictionary/regions/**
+        - /dictionary/languages
+        - /dictionary/specializations
+        - /dictionary/specializing
+        - /features
+        - /files/content
+      POST:
+        - /files
+        - /email
+        - /partnership-files
+        - /admin/providers
+        - /providers/*/lead
+        - /partnership-profile
+      PUT:
+        - /providers
+        - /admin/providers/*
+      DELETE:
+        - /files/**
+        - /partnership-files
+        - /admin/providers/**
+      PATCH:
+        - /admin/providers/**
+    search-service:
+      GET:
+        - /search/guided
+        - /search
+        - /find-service-providers
+        - /questionnaire/problem-area
+        - /questionnaire/project-areas
+        - /questionnaire/project-areas/*/details
+      POST:
+        - /questionnaire/service-providers
+        - /request-a-quote/attachments
+        - /find-service-providers
+      DELETE:
+        - /request-a-quote/attachments
+    company-channel-service:
+      POST:
+        - /channel/*/subscribe
+        - /channel/*/unsubscribe
+      GET:
+        - /training/**
+        - /opportunities
+        - /channel/**
+    translate-service:
+      POST:
+        - /translate
+    inapp-message-service:
+      GET:
+        - /message
+      POST:
+        - /message
+        - /messages
+      DELETE:
+        - /message/*
+    logs-accumulator-service:
+      POST:
+        - /log/*
+    global-navigation-service:
+      POST:
+        - /components
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
+  MaxAutoRetries: 5
+
+cookie:
+  default-max-age: 604800
+  domain:
+    live: ${exchange.hostname}
+
+---
+spring:
+  profiles: '!local'
+cookie:
+  http-only: true
+  secure: true
+---
+spring:
+  profiles: 'dev1,dev2,dev3'
+cookie:
+  secure: true
+---
+spring:
+  profiles: 'local'
+---
+spring:
+  profiles: 'uat,uat2'
+api:
+  white-list:
+    common:
+      GET:
+        - /actuator/health
+        - /actuator/info
+        - /webjars/**
+        - /v2/**
+        - /swagger-ui.html
+        - /swagger-resources/**
+      POST:
+        - /actuator/**
+    integration-hub-service:
+      POST:
+        - /email
+        - /events
+---
+spring:
+  profiles: 'ppr,prod'
+api:
+  white-list:
+    common:
+      GET: /actuator/health, /actuator/info
+      POST:
