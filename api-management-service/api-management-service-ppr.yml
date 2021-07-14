@@ -1,0 +1,5 @@
+apigee:
+  org: se-exchange-pre-prod
+  env: pre-prod
+  oauth:
+    username: machine3@se-exchange-sit.com

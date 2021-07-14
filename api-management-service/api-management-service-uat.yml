@@ -1,0 +1,5 @@
+apigee:
+  org: se-exchange-uat
+  env: uat
+  oauth:
+    username: machine2@se-exchange-sit.com
