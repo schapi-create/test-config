@@ -1,0 +1,66 @@
+server:
+  port: 30223
+
+spring:
+  profiles:
+    include:
+      - extranet
+      - feign
+      - dictionary-service-vendor-segment
+      - dictionary-service-vendor-business-type
+      - dictionary-service-vendor-certification
+      - dictionary-consumption-api-model
+      - dictionary-period
+      - dictionary-trial-period
+      - dictionary-grace-period
+      - dictionary-measure
+      - db
+      - internal-users
+      - business-status-criteria
+      - user-ail-roles-mapping
+      - messaging
+  datasource:
+    name: auth_service
+
+redirect:
+  tc: ${exchange.url}/terms-and-conditions-agreement
+  authorize-error: ${exchange.url}/error
+  home: ${exchange.url}
+  logout: ${exchange.url}/api/navigation-service/idp/logout
+  login: ${exchange.url}/api/navigation-service/idp/login
+  complete-profile: ${exchange.url}/complete-your-profile
+  unsupported-account-type: ${exchange.url}/unsupported-account-type
+
+check-ignore-url: ${exchange.url}/sso
+authority:
+  token:
+    timeout: 3600000
+company:
+  channel:
+    service:
+      roles:
+        ecoxpert: BMS Partner,Connected Power,Power Partner,Digital Panel,KNX Partner,CBus Australia,LRC Partner,Ecoxpert Datacenter,Ecoxpert Healthcare,EcoXpert Hotel,EcoXpert Registered
+
+hystrix:
+  command:
+    saveCompanyAndUserIfNotExist:
+      execution:
+        isolation:
+          strategy: THREAD
+          thread:
+            timeoutInMilliseconds: 25000
+    circuitBreaker:
+      requestVolumeThreshold: 5
+      sleepWindowInMilliseconds: 900000 # 15 * 60 * 1000
+    metrics:
+      rollingStats:
+        timeInMilliseconds: 300000 # 5 * 60 * 1000
+      healthSnapshot:
+        intervalInMilliseconds: 2000
+---
+spring:
+  profiles: local
+basic:
+  auth:
+    username: #Get local credentials on https://schneider.atlassian.net/wiki/spaces/Exchange/pages/2271151475/Local+profile+credentials
+    password:

@@ -1,0 +1,136 @@
+full-name-contain:
+  - Test
+  - QA prod
+  - prod QA
+  - Monitoring
+  - Demo2
+  - Gleb Grit
+  - Gleb Gritskevitch
+  - Gritskevitch
+  - Bold idea
+  - Boldidea
+  - QA Pros
+  - produser
+  - hello
+  - Iryna Prod
+  - godigital
+  - LINKBYNET
+  - B2b
+  - Open Line
+  - OpenLine
+  - Caroline Manfroi
+  - nagati
+  - Gritskevich
+  - PME Portal
+  - Ilya Kabanov
+  - Petja Lepola
+  - Denis Rousseau
+  - Linley Tanner
+  - Johan Wergelius
+  - Elena Gonchar
+  - Alfons Marquez
+full-name-equal:
+  - Bob Dilan
+  - Romy IPO
+  - Glebbbb Gritskevichhhh
+  - god buyer
+  - k k
+  - q q
+  - f f
+  - T T
+  - xris ccc
+  - wd wd
+  - sada asdf
+  - kkhh dsfa
+  - US BN Select
+  - Shounak Mondal
+  - Shankha 001
+  - MrPlant Machine
+  - Mike production
+  - Siarhei Balashevich
+  - Anatoliy Tatarenko
+company-name-contain:
+  - Schneider
+  - Epam
+  - Test
+  - Sch Elec
+  - SE Buildings
+  - Isatho
+  - Idms
+  - SE Bldgs
+  - Accenture
+  - THBS
+  - Innovation Summit
+  - Exchange SE
+  - Avanade
+  - SE Building
+company-name-equal:
+  - Linkbynet
+  - Epam
+  - test
+  - THBS
+  - Company
+  - SE
+  - Power Measurement Ltd
+  - monitoring
+  - Innovation Summit 001
+  - Marina bay
+  - D&amp
+  - A Architects
+  - Vitalii_Sys
+  - ESC
+  - JP Bonna
+  - E-Link Consulting
+  - Accenture
+  - GlebOS Co
+  - Mrs.
+  - hgm
+  - Acme Ltd
+  - ooo
+  - RalphL
+  - zdfb
+  - home
+  - lis
+  - xccc3
+  - SE Japan
+  - Bob company
+  - myexc10
+  - Jamison Industries
+  - Company name
+  - company_1
+  - BoldIdea001
+  - SETEST
+  - cvb
+  - Company test
+  - Company prod
+  - Company pieter
+  - Sreeja
+  - Unknown
+  - SE Singapore
+  - Hardis
+  - Kabang
+  - Avanade
+  - Plm company Co
+  - Jedi Solutions
+  - Fjord
+  - CompProd
+  - Pieter Company
+  - Some Inc.
+  - AT Internet
+  - df
+  - =S=
+  - Cuba country
+  - Ji company
+  - Epppa
+  - dgroup
+country-equal:
+  - AS
+  - BY
+federated-id-equal:
+  - 78b2279e-3896-4bde-ac7c-83419af88299
+  - gb004635-a5ea-615e-f4b5-ed0b49018390
+  - gb00daea-1471-5581-fcca-1eb9e33e4862
+  - gb009636-c823-dbfd-08e9-81ba57f6869e
+email-contain:
+  - Yopmail.com
+federated-id-start: SESA
