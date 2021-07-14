@@ -9,3 +9,11 @@ spring:
 aws:
   secretsmanager:
     enabled: false
+
+---
+spring:
+  profiles: uat
+  
+  
+myprops:
+  test: hello
