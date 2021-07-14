@@ -1,7 +1,0 @@
-redirect:
-  exchange:
-    navigation:
-      url: ${exchange.url}/api/navigation-service
-      shop:
-        url: ${redirect.exchange.navigation.url}/shop/apps
-      auth: ${redirect.exchange.navigation.url}/auth

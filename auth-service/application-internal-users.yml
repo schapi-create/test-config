@@ -1,9 +1,0 @@
----
-spring:
-  profiles: 'local'
-users:
-  internal-role-map:
-    ROLE_EXCHANGE_OPERATOR: ""
-    ROLE_EXCHANGE_CONTENT_MANAGER: ""
-    ROLE_EXCHANGE_REPORT_MANAGER: ""
-
