@@ -1,18 +1,3 @@
-spring:
-  cloud:
-    config:
-      server:
-        native:
-          search-locations: file:microservices-configuration,file:microservices-configuration/{application}
-  autoconfigure:
-    exclude: org.springframework.cloud.aws.autoconfigure.context.ContextRegionProviderAutoConfiguration
-aws:
-  secretsmanager:
-    enabled: false
-
----
-spring:
-  profiles: 'uat'
-   
+  
 myprops:
   test: hello
