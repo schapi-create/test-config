@@ -1,47 +1,5 @@
-
-management:
-  info:
-    git:
-      mode: full
+test:
+  my-uat: uat
 spring:
   application:
     name: config-service
-  main:
-    banner-mode: "off"
-  cloud:
-    config:
-      server:
-        bootstrap: false
-        git:
-          uri: https://bitbucket.org/schneideripo/microservices-configuration.git
-          username: sche_exch_build_user
-          default-label: develop
-          search-paths: '{application}'
-          clone-on-start: true
-          basedir: ./configuration
-
-logging:
-  file: ${spring.application.name}.log
-
-aws:
-  secretsmanager:
-    prefix:
-    profileSeparator: .
-    defaultContext: ${AWS_SM_COMMON}
-    name: ${AWS_SM_SERVICE}
-
-cloud:
-  aws:
-    stack:
-      auto: false
-
----
-spring:
-  profiles: '!native'
-security:
-  require-ssl: true
-server:
-  ssl:
-    key-store-type: PKCS12
-    key-store: server.p12
-    key-store-password:

@@ -1,6 +1,5 @@
-health:
-  config:
-    enabled: false
+test-prod:
+  my-prod: prod
 management:
   info:
     git:
