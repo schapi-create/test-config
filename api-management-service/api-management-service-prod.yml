@@ -1,6 +1,0 @@
-apigee:
-  org: se-exchange
-  env: prod
-  seZone: schneider-electric-exchange
-  oauth:
-    username: machine@se-exchange.com
