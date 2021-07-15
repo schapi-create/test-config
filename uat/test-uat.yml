@@ -3,3 +3,9 @@ test-new:
 spring:
   application:
     name: config-service
+	
+---
+sping:
+  profile: dev
+  
+dev-test: hello-dev

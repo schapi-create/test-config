@@ -3,3 +3,8 @@ test:
 spring:
   application:
     name: config-service
+---
+spring:
+  profile: dev
+  
+dev-test: hello-dev
