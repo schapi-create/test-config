@@ -1,0 +1,5 @@
+test-new:
+  my-uat-new: uat-test
+spring:
+  application:
+    name: config-service
